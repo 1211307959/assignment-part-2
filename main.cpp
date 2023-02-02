@@ -42,7 +42,7 @@ void Board::init(int dimX, int dimY)
         map_[i].resize(dimX_); // resize each row
     }
     // put random characters into the vector array
-    for (int i = 0; i < dimY_; ++i)
+    for (int i = 0; i < dimY_; ++i) 
     {
         for (int j = 0; j < dimX_; ++j)
         {
