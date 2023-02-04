@@ -128,6 +128,7 @@ public:
 class Zombie
 {
 public:
+    char id[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     void spawn(Board &board, int count)
     {
         int mid_x = board.getDimX() / 2;
@@ -140,11 +141,14 @@ public:
                 x = rand() % board.getDimX();
                 y = rand() % board.getDimY();
             } while (x == mid_x && y == mid_y);
-            board.map_[y][x] = 'Z';
+            board.map_[y][x] = id[i];
         }
     }
 
 private:
+    int hp;
+    int attack;
+    int Zrange;
 };
 
 void Board::gameSetting()
@@ -270,7 +274,7 @@ void Board::healthDisplay()
 }
 void test1_1()
 {
-        int count = 1;
+        int count = 2;
         Board board;
         Alien alien;
         Zombie zombie;
@@ -290,7 +294,7 @@ void mainPage()
 
     cout << "Row = " << board.getDimX() << endl;
     cout << "Column = " << board.getDimY() << endl;
-    cout << "Zombie = 1" << endl << endl;
+    cout << "Zombie = 2" << endl << endl;
 
     string choice;
     bool onlyChoice = false;
