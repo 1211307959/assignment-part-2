@@ -125,7 +125,18 @@ public:
         int middleY = board.getDimY() / 2;
         board.map_[middleY][middleX] = 'A';
     }
+    void attribute();
+private:
+int aHp;
+int aAttack;
 };
+
+void Alien::attribute(){
+    aHp = 100;
+    aAttack = 0;
+    cout << "-> Alien :  Life "<< aHp ;
+    cout <<", " <<"Attack " << aAttack << endl ;
+}
 
 class Zombie
 {
@@ -207,11 +218,8 @@ void Board::gameSetting()
 
 void Board::healthDisplay()
 {
-    int a_life = 100;
-    int a_attack = 0;
-    cout << "-> Alien :  Life "<< a_life ;
-    cout <<", " <<"Attack " << a_attack<< endl ;
-
+    Alien alien;
+    alien.attribute();
     Zombie zombie;
     zombie.attribute();
    
@@ -286,10 +294,6 @@ void Board::healthDisplay()
 void test1_1()
 {
         Board board;
-        Alien alien;
-        Zombie zombie;
-        alien.spawn(board);
-        zombie.spawn(board, count);
         board.display();
         board.healthDisplay();
 }
