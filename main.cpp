@@ -7,6 +7,8 @@
 #include <conio.h>
 using namespace std;
 bool gameRunning = true;
+int count = 2;
+
 class Board
 {
 private:
@@ -144,18 +146,34 @@ public:
             board.map_[y][x] = id[i];
         }
     }
+    void attribute();
 
 private:
-    int hp;
-    int attack;
-    int Zrange;
+    int zHp;
+    int zAttack;
+    int range;
+};
+
+void Zombie::attribute(){
+
+    for (int i = 0; i < count; i++)
+    {
+    zHp = (rand() % 4 + 1) * 50 + 50;
+    zAttack = (rand() % 5 + 1) * 5; // 5 - 25
+    range = rand() % 3 + 1; // 1 - 3
+
+    cout << "   Zombie " << id[i] << " : Life "<< zHp ;
+    cout << ", " <<"Attack " <<  zAttack << ',';
+    cout << " Range  "<< range << endl;
+    }
+    cout << endl;
 };
 
 void Board::gameSetting()
 {
     int newX = 0;
     int newY = 0;
-    int count = 0;
+    count = 0;
     bool odd = false;
 
     while (odd == false){
@@ -175,7 +193,7 @@ void Board::gameSetting()
     else
     {
 
-        init(newX, newY);
+        init( newX, newY);
         Alien alien;
         alien.spawn(*this);
         Zombie zombie;
@@ -191,19 +209,11 @@ void Board::healthDisplay()
 {
     int a_life = 100;
     int a_attack = 0;
-    int z_life = 100 + (rand()% 201);
-    int z_attack = 1+ (rand()% 15);
-    int range    = 1+ rand() %3;
-    
-
     cout << "-> Alien :  Life "<< a_life ;
     cout <<", " <<"Attack " << a_attack<< endl ;
-    cout << "   Zombie 1 :  Life "<< z_life ;
-    cout << ", " <<"Attack " << z_attack<< ',';
-    cout << " Range  "<< range<<endl;
-    cout << "   Zombie 2 :  Life "<< z_life ;
-    cout << ", " <<"Attack " << z_attack<< ',';
-    cout << " Range  "<< range<< endl ;
+
+    Zombie zombie;
+    zombie.attribute();
    
 }
 
@@ -244,6 +254,7 @@ void Board::healthDisplay()
         if (input == "help")
         {
             getHelp();
+            return;
         }
         if (input == "save")
         {
@@ -274,7 +285,6 @@ void Board::healthDisplay()
 }
 void test1_1()
 {
-        int count = 2;
         Board board;
         Alien alien;
         Zombie zombie;
@@ -307,6 +317,7 @@ void mainPage()
         {
             board.gameSetting();
             board.display();
+            board.healthDisplay();
             onlyChoice = true;
         } else if (choice == "N"||choice == "n") {
             cout << "Default setting Mantained" << endl << endl;
