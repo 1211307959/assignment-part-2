@@ -2,10 +2,10 @@
 // Course: TCP1101 PROGRAMMING FUNDAMENTALS 
 // Year: Trimester 1, 2022/23 (T2215) 
 // Lab: T12L 
-// Names: MUHAMMAD KASYFI KHUZAIRI BIN MOHD GHAZALI | YUVAN RAJ A/L RAJENDRAN | ARNALIN BINTI IBRAHIM 
-// IDs: 1211307959 | 1171102249 | 1211306091 
-// Emails: 1211307959@student.mmu.edu.my | 1171102249@student.mmu.edu.my | 1211306091@student.mmu.edu.my 
-// Phones: 0166513686 | 01116412020 | 01136039588
+// Names: MUHAMMAD KASYFI KHUZAIRI BIN MOHD GHAZALI | YUVAN RAJ A/L RAJENDRAN
+// IDs: 1211307959 | 1171102249 
+// Emails: 1211307959@student.mmu.edu.my | 1171102249@student.mmu.edu.my 
+// Phones: 0166513686 | 01116412020
 // ********************************************************* 
 #include <iostream>
 #include <string>
@@ -178,16 +178,16 @@ void examineNextPositions(char nextSpot, Alien &alien, Zombie &zombie)
     {
         alien.move = nextSpot;
         alien.aAttack += 20;
-        cout << "Alein move changed to " << nextSpot << endl;
-        cout << "Alein Attack +20 " <<  endl;
+        cout << "Alien move changed to " << nextSpot << endl;
+        cout << "Alien Attack +20 " <<  endl;
     }
     else if (nextSpot == 'h')
     {   
         if(alien.aHp <= 100){
             alien.aHp += 20;
         }
-        cout << "Alein found a health pack " << endl;
-        cout << "Alein's lifes increased by 20 " << endl
+        cout << "Alien found a health pack " << endl;
+        cout << "Alien's lifes increased by 20 " << endl
              << endl;
     }
     else if (nextSpot == 'p')
@@ -229,8 +229,6 @@ void Alien::alienPlay(Board &board, Alien &alien, Zombie &zombie){
         if (nextX == -1 || nextX >= GameBoardRows - 1 || nextY == -1 || nextY >= GameBoardCols - 1)
         {
             cout << "Alien hit a Game Board border and its turn ended." << endl;
-            cout << nextX << endl;
-            cout << GameBoardRows << endl;
             return;
         }
         else
@@ -488,7 +486,7 @@ void getCommand(Alien &alien, Board &board)
     }
 }
 
-void test1_1()
+void defaultSettings()
 {
     int count = 2;
     Board board;
@@ -528,7 +526,7 @@ void mainPage()
         } else if (choice == "N"||choice == "n") {
             cout << "Default setting Mantained" << endl << endl;
             //system("pause");
-            test1_1();
+            defaultSettings();
             onlyChoice = true;
         }
     }    
