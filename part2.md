@@ -10,12 +10,23 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 List all the features completed.
 
-1.  game board
-2.  alien spawn
-3.  multiple zombie random spawn
-4.  game setting(row, column and number of zombie)
-5.  display help
-6.  quit option
+1. Class board
+2. char getRandomObject()
+3. Board::init(int dimX, int dimY)
+4. Board::display()
+5. alienPlay
+6. examineNextPositions
+7. mainPage
+9. gameSetting
+10. Class alien, 
+11. Alien Attribute
+12. Zombie
+13. Zombie attribute
+14. zombieTurn
+15. healthDisplay
+16. getHelp
+17. getCommand
+18. resetObjects
 
 ### To Do
 
@@ -30,17 +41,26 @@ Describe the additional features that has been implemented.
 
 ### Kasyfi
 
-1. game setting
-2. multiple zombie random spawn
-3. command function - display help and quit
-4. zombie random movement
+1. Class alien, 
+2. Alien Attribute
+3. Zombie
+4. Zombie attribute
+5. zombieTurn
+6. healthDisplay
+7. getHelp
+8. getCommand
+9. resetObjects
 
 ### Yuvan
 
-1. generating game board
-2. game settings for number of rows and columns
-3. attribute display
-4. alien movement
+1. Class board
+2. char getRandomObject()
+3. Board::init(int dimX, int dimY)
+4. Board::display()
+5. alienPlay
+6. examineNextPositions
+7. mainPage
+9. gameSetting
 
 
 ## Problems Encountered & Solutions
