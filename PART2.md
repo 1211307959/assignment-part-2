@@ -4,6 +4,8 @@
 
 Please provide the YouTube link to your [Video Demo]([https://youtube.com](https://youtu.be/UpJsKfxg1To)).
 
+https://youtu.be/UpJsKfxg1To
+
 ## Minimum Requirements
 
 ### Completed
